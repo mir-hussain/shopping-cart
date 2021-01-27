@@ -20,6 +20,9 @@ function priceUpdater(priceId, product) {
     return 0;
   }
   document.getElementById(priceId).innerText = updatedPrice;
+  const subTotal = parseInt(document.getElementById("sub-total").innerText);
+  const updatedSubTotal = subTotal + product;
+  document.getElementById("sub-total").innerText = updatedSubTotal;
 }
 
 const addButton = document.querySelectorAll(".add-one");
@@ -44,4 +47,3 @@ reduceButton[1].addEventListener("click", () => {
   counterUpdater("counter2", -1);
   priceUpdater("price2", -1 * coverPrice);
 });
-
